@@ -1,0 +1,7 @@
+version: v1.0.0
+steps:
+# Build target image
+- build: -t {{.Run.Registry}}/acr-agent-autoscaler:latest -f Dockerfile .
+# Push image
+- push:
+  - {{.Run.Registry}}/acr-agent-autoscaler:latest
